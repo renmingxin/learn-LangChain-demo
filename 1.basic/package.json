@@ -1,0 +1,26 @@
+{
+  "name": "1.basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+   "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "tsdown": "0.23.2",
+    "langchain": "1.5.19",
+    "@langchain/openai": "1.7.0",
+    "@langchain/anthropic": "1.6.0",
+    "zod": "4.6.7",
+    "dotenv": "^16.0.0"
+  }
+} 
