@@ -13,6 +13,8 @@ const ResponseSchema = z.object({
   // dom: z.object().describe('dom json的描述信息'),
   name: z.string().describe('姓名'),
   age: z.number().describe('年龄'),
+  sex: z.string().describe('性别'),
+  address: z.string().describe('地址'),
   hobby: z.array(z.string().describe('爱好')).describe('爱好列表'),
 })
 const chatOpenAI = new ChatOpenAI({
@@ -27,12 +29,7 @@ const chatOpenAI = new ChatOpenAI({
   },
 })
 //  用于将模型的输出转换为结构化数据, 并根据Schema进行验证
-const modalWithStruct = chatOpenAI.withStructuredOutput(ResponseSchema, {
-  // 调用函数
-  method: "functionCalling",
-  // 是否包含原始输出
-  includeRaw: true,
-});
+const modalWithStruct = chatOpenAI.withStructuredOutput(ResponseSchema);
 
 const invoke = async () => {
   console.log('invoke')
@@ -44,7 +41,7 @@ const invoke = async () => {
       },
       {
         type: 'text',
-        text: '我叫renmx, 我今年18岁, 我喜欢运动, 我也喜欢旅游',
+        text: '我叫renmx, 我今年18岁, 我是男生，我住在四川成都，我喜欢运动, 我也喜欢旅游',
       }
     ])])
   console.log('result', result)
