@@ -43,7 +43,6 @@ const invoke = async () => {
       }
 
     ])])
-  // fs.writeFileSync(path.resolve(__dirname, '../agent_output/result.txt'), 'asdasd')
   console.log('result', result)
 }
 
